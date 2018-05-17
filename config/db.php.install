@@ -1,0 +1,17 @@
+<?php
+
+$config = [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host={DB_HOST};dbname={DB_NAME}',
+    'username' => '{DB_USER}',
+    'password' => '{DB_PASS}',
+    'charset' => 'utf8',
+];
+
+if (YII_ENV == 'prod') {
+    $config['enableSchemaCache'] = true;
+    $config['schemaCacheDuration'] = 60;
+    $config['schemaCache'] = 'cache';
+}
+
+return $config;
